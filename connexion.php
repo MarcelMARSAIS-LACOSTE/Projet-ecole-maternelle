@@ -1,8 +1,5 @@
 <?php include('head.inc.php'); ?>
 
-
-
-
 <body style="background: url(Images/background-default.jpg) no-repeat !important; position: relative ; font-size: calc(12px + 1vw)">
 <div style=" position:relative; margin: auto; max-width: 75% ;width: auto;   border: 3px solid green;  padding: 70px 0; text-align: center ;background:rgba(250,250,250,0.7); color:black; overflow:auto">
 	<div id="logo" style="overflow:auto; margin-top: none"> <h1 style="position: relative; font-size: calc(12px + 3vw);display:left"> Ecole maternelle le Petit Prince  <img src="Images/petitprince1.jpg" alt="logo de l'ecole maternelle" style="position: relative ;width: auto; max-height:25vh"></h1> </div>
@@ -24,6 +21,3 @@
 	</form>
 </div>
 </body>
-
-
-</html>

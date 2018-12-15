@@ -1,0 +1,17 @@
+p
+{
+	 color: blue;
+	 padding-bottom:4%;
+}
+
+div#titre_article
+{	
+	font-size:125%;
+	color: red;
+}
+
+div#article
+{
+	border: 3px solid ;
+	border-color:red;
+}
