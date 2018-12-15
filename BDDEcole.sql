@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS PHP_Ecole;
 
-CREATE OR REPLACE TABLE Compte
+CREATE TABLE Compte
 (
 	identifiant_compte VARCHAR(30),
 	mot_de_passe VARCHAR(50) NOT NULL,
@@ -25,4 +25,3 @@ CREATE TABLE Images
 	nom_image VARCHAR(50),
 	chemin_image VARCHAR(100)
 );
-
