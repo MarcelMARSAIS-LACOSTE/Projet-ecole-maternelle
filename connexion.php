@@ -1,3 +1,7 @@
+<?php include('head.inc.php'); ?>
+
+
+
 
 <body style="background: url(Images/background-default.jpg) no-repeat !important; position: relative ; font-size: calc(12px + 1vw)">
 <div style=" position:relative; margin: auto; max-width: 75% ;width: auto;   border: 3px solid green;  padding: 70px 0; text-align: center ;background:rgba(250,250,250,0.7); color:black; overflow:auto">
@@ -20,3 +24,6 @@
 	</form>
 </div>
 </body>
+
+
+</html>
