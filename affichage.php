@@ -39,6 +39,7 @@ try
 	<div id="article">
             <tr>
                 <td><div id="titre_article"><?php echo $row['titre'];?></div>
+				<?php echo $row['date_publication']?>
                 <td><p><?php echo $row['texte'];        ?></p><td>
             </tr>
     </div>

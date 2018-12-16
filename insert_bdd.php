@@ -1,5 +1,6 @@
-
 <?php
+	date_default_timezone_set('Europe/Paris');
+	
 	define('DB_HOST','localhost');
 	define('DB_PORT','3306');
 	define('DB_DATABASE','php_ecole');
@@ -19,7 +20,7 @@
 		exit();
 	}
 	$query="SELECT * FROM `article` WHERE `identifiant_article`= (SELECT max(`identifiant_article`) FROM `article`)";
-	
+	$temp=0;
 	try
 	{
 		$pdo_select= $PDO_BDD->prepare($query);
@@ -36,8 +37,9 @@
 		
 		$titre=$_POST['titre'];
 		$contenu=$_POST['contenu'];
-		$query= "INSERT INTO article (identifiant_article,titre,etat_article,texte)
-				VALUES ('$id_article', '$titre','3','$contenu')";
+		$date=date("Y-m-d");
+		$query= "INSERT INTO article (identifiant_article,titre,etat_article,date_publication,texte)
+				VALUES ('$id_article', '$titre','3','$date','$contenu')";
 		try
 		{
 			$pdo_select= $PDO_BDD->prepare($query);
@@ -45,5 +47,5 @@
 			} catch (PDOExpection $e){ echo "CA MARCHE PAS"; die();}
 
 	echo $_POST['titre'];
-	?>	
+?>	
 	
