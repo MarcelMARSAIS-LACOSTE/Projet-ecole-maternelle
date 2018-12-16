@@ -10,7 +10,7 @@ CREATE TABLE Compte
 
 CREATE TABLE Article
 (
-	identifiant_article VARCHAR(30) PRIMARY KEY,
+	identifiant_article INT PRIMARY KEY,
 	titre VARCHAR(50),
 	etat_article INT, -- 1 : a valider 2 : a édtier 3 : publié 
 	comptes_concernes INT,
