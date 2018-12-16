@@ -9,7 +9,7 @@
 			Identifiant :
 			<input type="text"name="login" style = "margin:10px"/><br/>
 			Mot de passe :
-			<input type="text"name="password" style = "margin:10px"/><br/>
+			<input type="password"name="password" style = "margin:10px"/><br/>
 
 			<input type="submit"name="form_sondage"value="Connexion" style = "margin:10px ; background: rgb(58,232,72); /* Green */ border: none;
   padding: 5px 5px;
