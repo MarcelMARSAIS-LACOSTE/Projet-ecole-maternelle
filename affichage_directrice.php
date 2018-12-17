@@ -44,7 +44,7 @@ try
 					<td><p><?php echo $row['texte'];     
 					echo $row['identifiant_article']; ?></p><td>
 					<input type="hidden" name="foo" value="<?php echo $row['identifiant_article'];?>"/>
-					<input type="submit" name="val" value="Valider cette merde"/>
+					<input type="submit" name="val" value="Valider l'article"/>
 				</tr>
 		</div>
 	</form>
