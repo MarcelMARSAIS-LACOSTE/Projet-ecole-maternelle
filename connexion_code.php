@@ -1,11 +1,10 @@
- <?php
+<?php
     
         if(empty($_POST['username']))
         {
             header('Location: index.php?erreur=2');
             return false;
         }
-
         if(empty($_POST['password']))
         {
             header('Location: index.php?erreur=2');
@@ -13,11 +12,8 @@
         }
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
-
         $conn = mysqli_connect("localhost", "u_php_Ecole", "SJzEeqLb2HHeNYVV", "php_Ecole");
         $req = "SELECT * FROM compte WHERE identifiant_compte = '".$username."' AND mot_de_passe = '".$password."'";
-
-
 if (!$conn)
 {
     echo "erreur de connection à la base de données";
@@ -32,10 +28,8 @@ if (!$conn)
                 // on ouvre la session avec $_SESSION:
                     session_start();
                     $_SESSION['identifiant_compte'] = $username;
-
                     //$_SESSION['pseudo'] = $Pseudo; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     header('Location: affichage.php');
-
         
                 }
         return true;
@@ -51,7 +45,6 @@ if(isset($_POST['Connexion'])){
     $dbDatabase = "php_ecole";    //Database Name 
      
     $db = mysql_connect($dbHost,$dbUser,$dbPass);
-
     if (!$db)
 {
     echo "erreur de connection à la base de données";
@@ -85,5 +78,4 @@ if(isset($_POST['Connexion'])){
     exit; 
 } 
 ?> 
-
 -->

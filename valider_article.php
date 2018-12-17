@@ -38,6 +38,7 @@
 			$pdo_select->execute();
 		} catch (PDOExpection $e){ echo "CA MARCHE PAS"; die();}
 
-	echo " Article validé ";
+		header('Location: affichage_directrice.php');
+  exit();
 ?>	
 	

@@ -45,7 +45,7 @@
 			$pdo_select= $PDO_BDD->prepare($query);
 			$pdo_select->execute();
 		} catch (PDOExpection $e){ echo "CA MARCHE PAS"; die();}
-
-	echo $_POST['titre'];
+		
+	header('Location: affichage.php');
 ?>	
 	

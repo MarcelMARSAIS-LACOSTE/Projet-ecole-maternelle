@@ -5,9 +5,9 @@ CREATE USER 'u_php_Ecole'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV';
 GRANT USAGE ON * . * TO 'u_php_Ecole'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
 GRANT ALL PRIVILEGES ON `php_Ecole` . * TO 'u_php_Ecole'@'localhost';
 
-CREATE USER 'comptetest'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV';
-GRANT USAGE ON * . * TO 'comptetest'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
-GRANT ALL PRIVILEGES ON `php_Ecole` . * TO 'comptetest'@'localhost';
+CREATE USER 'comptest'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV';
+GRANT USAGE ON * . * TO 'comptest'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+GRANT ALL PRIVILEGES ON `php_Ecole` . * TO 'comptest'@'localhost';
 
 CREATE TABLE Compte
 (
@@ -17,7 +17,7 @@ CREATE TABLE Compte
 	CONSTRAINT identifiant_personne_PK PRIMARY KEY(identifiant_compte)
 );
 
-INSERT INTO compte VALUES("test_u", "test_u", 1);
+INSERT INTO compte VALUES("test_u", "test_u", 1)
 
 CREATE TABLE Article
 (
