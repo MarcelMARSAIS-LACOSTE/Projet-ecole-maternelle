@@ -29,23 +29,15 @@
 		$rowAll = $pdo_select->fetchAll();
 	} catch (PDOExpection $e){ echo "CA MARCHE PAS"; die();}
 
-			foreach ( $rowAll as $row )
-		{
-			$temp=$row["identifiant_article"];
-		}	
-		$id_article=$temp+1;
-		$contenu="";
-		$titre=$_POST['titre'];
-		$contenu=$_POST['contenu'];
-		$date=date("Y-m-d");
-		$query= "INSERT INTO article (identifiant_article,titre,etat_article,date_publication,texte)
-				VALUES ('$id_article', '$titre','1','$date','$contenu')";
+		$id_article=$_POST['val'];
+		echo  $id_article;
+		$query= "UPDATE `php_ecole`.`article` SET `etat_article` = '3' WHERE `article`.`identifiant_article` = $id_article";
 		try
 		{
 			$pdo_select= $PDO_BDD->prepare($query);
 			$pdo_select->execute();
 		} catch (PDOExpection $e){ echo "CA MARCHE PAS"; die();}
 
-	echo $_POST['titre'];
+	echo " Article validé ";
 ?>	
 	

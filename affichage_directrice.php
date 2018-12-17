@@ -1,13 +1,17 @@
+<head>
+	<title>Affichage</title>
+	<link rel="stylesheet" href="affichage.css">
+</head>
+
 <?php
-	date_default_timezone_set('Europe/Paris');
-	
 	define('DB_HOST','localhost');
 	define('DB_PORT','3306');
 	define('DB_DATABASE','php_ecole');
 	define('DB_USERNAME','comptetest');
 	define('DB_PASSWORD','SJzEeqLb2HHeNYVV');
 	
-	try
+
+try
 	{
 		$PDO_BDD = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_DATABASE,DB_USERNAME,DB_PASSWORD);
 		$PDO_BDD->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -19,8 +23,8 @@
 		echo 'N° : ' .$e->getCode();
 		exit();
 	}
-	$query="SELECT * FROM `article` WHERE `identifiant_article`= (SELECT max(`identifiant_article`) FROM `article`)";
-	$temp=0;
+	
+	$query= "SELECT * FROM article WHERE etat_article=1;";
 	try
 	{
 		$pdo_select= $PDO_BDD->prepare($query);
@@ -31,21 +35,17 @@
 
 			foreach ( $rowAll as $row )
 		{
-			$temp=$row["identifiant_article"];
-		}	
-		$id_article=$temp+1;
-		$contenu="";
-		$titre=$_POST['titre'];
-		$contenu=$_POST['contenu'];
-		$date=date("Y-m-d");
-		$query= "INSERT INTO article (identifiant_article,titre,etat_article,date_publication,texte)
-				VALUES ('$id_article', '$titre','1','$date','$contenu')";
-		try
-		{
-			$pdo_select= $PDO_BDD->prepare($query);
-			$pdo_select->execute();
-		} catch (PDOExpection $e){ echo "CA MARCHE PAS"; die();}
-
-	echo $_POST['titre'];
-?>	
-	
+	?>
+	<form action="valider_article.php" method="post">
+		<div id="article">
+				<tr>
+					<td><div id="titre_article"><?php echo $row['titre'];?></div>
+					<?php echo $row['date_publication']?>
+					<td><p><?php echo $row['texte'];     
+					echo $row['identifiant_article']; ?></p><td>
+					<input type="submit" value="<?php echo $row['identifiant_article']; ?>" name="val"/>
+				</tr>
+		</div>
+	</form>
+  <?php } ?>
+  
