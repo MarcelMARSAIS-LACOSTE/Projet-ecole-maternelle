@@ -41,8 +41,10 @@ try
 				<tr>
 					<td><div id="titre_article"><?php echo $row['titre'];?></div>
 					<?php echo $row['date_publication']?>
-					<td><p><?php echo $row['texte'];  ?></p><td>
-					<input type="submit" value="<?php echo $row['identifiant_article']; ?>" name="val"/>
+					<td><p><?php echo $row['texte'];     
+					echo $row['identifiant_article']; ?></p><td>
+					<input type="hidden" name="foo" value="<?php echo $row['identifiant_article'];?>"/>
+					<input type="submit" name="val" value="Valider cette merde"/>
 				</tr>
 		</div>
 	</form>

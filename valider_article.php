@@ -29,7 +29,7 @@
 		$rowAll = $pdo_select->fetchAll();
 	} catch (PDOExpection $e){ echo "CA MARCHE PAS"; die();}
 
-		$id_article=$_POST['val'];
+		$id_article=$_POST['foo'];
 		echo  $id_article;
 		$query= "UPDATE `php_ecole`.`article` SET `etat_article` = '3' WHERE `article`.`identifiant_article` = $id_article";
 		try
