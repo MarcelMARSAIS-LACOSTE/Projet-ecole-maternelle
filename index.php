@@ -17,6 +17,15 @@
   text-decoration: none;
   display: inline-block; color:white;
   font-size: 16px;"/>
+  <?php
+  if(isset($_GET['erreur'])) {
+  	$err = $_GET['erreur'];
+  	if($err==1)
+  		echo "<p style='color:red'>Utilisateur ou mot de passe inconnu </p>";
+  	if($err==2)
+  		echo "<p style='color:red'>Les champs ne doivent pas être vide </p>";
+  }
+  ?>
 	</fieldset> </form>
 </div>
 </body>

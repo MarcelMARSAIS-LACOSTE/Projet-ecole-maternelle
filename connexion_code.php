@@ -2,13 +2,13 @@
     
         if(empty($_POST['username']))
         {
-           echo "Entrez un nom d'utilisateur!";
+            header('Location: index.php?erreur=2');
             return false;
         }
 
         if(empty($_POST['password']))
         {
-            echo "Entrez un mot de passe!";
+            header('Location: index.php?erreur=2');
             return false;
         }
         $username = trim($_POST['username']);
@@ -27,14 +27,14 @@ if (!$conn)
                 // si il y a un résultat, mysqli_num_rows() nous donnera alors 1
                 // si mysqli_num_rows() retourne 0 c'est qu'il a trouvé aucun résultat
                 if($row_cnt = mysqli_num_rows($result) == 0) {
-                    echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
+                    header('Location: index.php?erreur=1');
                 } else {
                 // on ouvre la session avec $_SESSION:
                     session_start();
                     $_SESSION['identifiant_compte'] = $username;
 
                     //$_SESSION['pseudo'] = $Pseudo; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
-                    echo "Vous êtes à présent connecté !";
+                    header('Location: affichage.php');
 
         
                 }
