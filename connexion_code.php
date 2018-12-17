@@ -14,22 +14,22 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-        $conn = mysqli_connect("localhost", "php_ecole", "SJzEeqLb2HHeNYVV", "php_ecole");
+        $conn = mysqli_connect("localhost", "u_php_Ecole", "SJzEeqLb2HHeNYVV", "php_Ecole");
         $req = "SELECT * FROM compte WHERE identifiant_compte = '".$username."' AND mot_de_passe = '".$password."'";
 
-/*
+
 if (!$conn)
 {
     echo "erreur de connection à la base de données";
     die;
-}*/
-                $Requete = mysqli_query($conn,$req);//si vous avez enregistré le mot de passe en md5() il vous suffira de faire la vérification en mettant mdp = '".md5($MotDePasse)."' au lieu de mdp = '".$MotDePasse."'
+}
+                $result = mysqli_query($conn,$req); //si vous avez enregistré le mot de passe en md5() il vous suffira de faire la vérification en mettant mdp = '".md5($MotDePasse)."' au lieu de mdp = '".$MotDePasse."'
                 // si il y a un résultat, mysqli_num_rows() nous donnera alors 1
                 // si mysqli_num_rows() retourne 0 c'est qu'il a trouvé aucun résultat
-                if(mysqli_num_rows($Requete) == 0) {
+                if($row_cnt = mysqli_num_rows($result) == 0) {
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
-                    // on ouvre la session avec $_SESSION:
+                // on ouvre la session avec $_SESSION:
                     session_start();
                     $_SESSION['identifiant_compte'] = $username;
 

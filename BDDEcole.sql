@@ -1,4 +1,9 @@
-CREATE DATABASE IF NOT EXISTS PHP_Ecole;
+CREATE DATABASE `PHP_Ecole` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+use `php_Ecole`;
+
+CREATE USER 'u_php_Ecole'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV';
+GRANT USAGE ON * . * TO 'u_php_Ecole'@'localhost' IDENTIFIED BY 'SJzEeqLb2HHeNYVV' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+GRANT ALL PRIVILEGES ON `php_Ecole` . * TO 'u_php_Ecole'@'localhost';
 
 CREATE TABLE Compte
 (
@@ -7,6 +12,8 @@ CREATE TABLE Compte
 	etat_dacces INT, 
 	CONSTRAINT identifiant_personne_PK PRIMARY KEY(identifiant_compte)
 );
+
+INSERT INTO compte VALUES("test_u", "test_u", 1)
 
 CREATE TABLE Article
 (
